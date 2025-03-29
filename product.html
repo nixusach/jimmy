@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-gallery">
+            <button class="prev-btn">&#10094;</button> <!-- Left Arrow -->
+            <div class="main-image">
+                <img id="product-image" src="" alt="Product Image">
+            </div>
+            <button class="next-btn">&#10095;</button> <!-- Right Arrow -->
+        </div>
+
+        <div class="product-details">
+            <h1 id="product-name"></h1>
+            <p class="price" id="product-price"></p>
+
+            <form id="order-form" action="https://formsubmit.co/nisach2906@gmail.com" method="POST">
+                <div id="selection-container">
+                    <div class="selection-row">
+                        <label>Color:</label>
+                        <select id="color-select" name="color"></select>
+
+                        <label>Size:</label>
+                        <select id="size-select" name="size"></select>
+
+                        <label>Quantity:</label>
+                        <input type="number" name="quantity" value="1" min="1">
+                    </div>
+                </div>
+
+                <div class="add-another">
+                    <span class="plus-icon">+</span>
+                    <button type="button" id="add-more">Add Another</button>
+                </div>
+
+                <div class="form-row">
+                    <label>Full Name:</label>
+                    <input type="text" name="full_name" required>
+                </div>
+
+                <div class="form-row">
+                    <label>Telephone Number:</label>
+                    <input type="tel" name="phone" pattern="[0-9]{10}" maxlength="10" required>
+                </div>
+
+                <div class="form-row">
+                    <label>Address:</label>
+                    <textarea name="address" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="product-script.js"></script>
+</body>
+</html>

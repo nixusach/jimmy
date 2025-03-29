@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100vh; /* Ensures it fills the full viewport height */
+}
+
+.product-gallery {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Centering vertically */
+    justify-content: center;
+    position: relative;
+}
+
+.main-image {
+    width: 450px; /* Fixed size */
+    height: 500px; /* Fixed size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures consistency */
+    border-radius: 8px;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.price {
+    color: #e60023;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.description {
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-another {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0078ff;
+}
+
+.add-another .plus-icon {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-row input,
+.form-row textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit-btn {
+    background: #0078ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background: #005bb5;
+}
+
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-btn:hover {
+    background: darkred;
+}
+
+.selection-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.selection-row select,
+.selection-row input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .product-container {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Allow scrolling */
+        padding: 10px;
+    }
+
+    .product-gallery {
+        width: 100%;
+    }
+
+    .main-image {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .main-image img {
+        max-height: 300px; /* Limit height */
+    }
+
+    .prev-btn, .next-btn {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .product-details {
+        width: 100%;
+        padding: 15px;
+        text-align: center; /* Center align text */
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-row input,
+    .form-row textarea {
+        width: 90%; /* Make inputs wider */
+    }
+
+    .submit-btn {
+        width: 90%;
+    }
+
+    .nav-links {
+        display: none; /* Hide full menu */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+}
