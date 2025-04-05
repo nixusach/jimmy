@@ -8,10 +8,10 @@ document.getElementById("add-more").addEventListener("click", function () {
     newRow.innerHTML = `
         <label>Color:</label>
         <select name="color">
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Cyan">Cyan</option>
-            <option value="Rose">Rose</option>
+            <option value="بني">Red</option>
+            <option value="أزرق">Blue</option>
+            <option value="سماوي">Cyan</option>
+            <option value="بنفسجي">Rose</option>
         </select>  
 
         <label>Size:</label>
@@ -20,7 +20,7 @@ document.getElementById("add-more").addEventListener("click", function () {
         </select>  
 
         <label>Quantity:</label>
-        <input type="number" name="quantity" value="1" min="1">
+        <input type="number" name="الكمية" value="1" min="1">
 
         <button type="button" class="remove-btn">Remove</button>
     `;
