@@ -8,10 +8,10 @@ document.getElementById("add-more").addEventListener("click", function () {
     newRow.innerHTML = `
         <label>Color:</label>
         <select name="color">
-            <option value="بني">Red</option>
-            <option value="أزرق">Blue</option>
-            <option value="سماوي">Cyan</option>
-            <option value="بنفسجي">Rose</option>
+            <option value="Brown">بني</option>
+            <option value="Bleu">أزرق</option>
+            <option value="Cyan">سماوي</option>
+            <option value="Purple">بنفسجي</option>
         </select>  
 
         <label>Size:</label>
@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Populate color dropdown
     const colorSelect = document.getElementById("color-select");
     colorSelect.innerHTML = `
-        <option value="بني">Red</option>
-        <option value="أزرق">Blue</option>
-        <option value="سماوي">Cyan</option>
-        <option value="بنفسجي">Rose</option>
+        <option value="Brown">بني</option>
+        <option value="Bleu">أزرق</option>
+        <option value="Cyan">سماوي</option>
+        <option value="Purple">بنفسجي</option>
     `;
 
     // Populate size dropdown (Only one size)
