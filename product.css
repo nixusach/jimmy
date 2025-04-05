@@ -252,13 +252,13 @@ form {
     }
 
     #product-name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin: 0 0 8px 0;
         text-align: center;
     }
 
     .price {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         margin: 0 0 15px 0;
         text-align: center;
     }
@@ -286,7 +286,7 @@ form {
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 4px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .selection-row input[type="number"] {
@@ -350,7 +350,7 @@ form {
 
     /* Mobile UX improvements */
     input, select, textarea {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     input[type="tel"] {
