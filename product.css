@@ -172,7 +172,7 @@ form {
 /* Mobile Responsive Styles - Final Version */
 @media only screen and (max-width: 768px) {
     html, body {
-        height: 100vh;
+        min-height: 100vh;
         overflow-x: hidden;
         margin: 0;
         padding: 0;
@@ -186,7 +186,7 @@ form {
 
     .product-container {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh; /* allow it to grow */
         display: flex;
         flex-direction: column;
         padding: 0;
