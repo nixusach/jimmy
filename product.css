@@ -12,20 +12,23 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevents unwanted scrolling */
 }
 
 .product-container {
     display: flex;
+    flex-direction: row; /* default: desktop */
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     max-width: 1200px;
     margin: auto;
     background: white;
     padding: 20px;
     border-radius: 8px;
-    height: 100vh; /* Ensures it fills the full viewport height */
+    gap: 20px;
+    flex-wrap: wrap; /* for responsiveness */
+    height: auto; /* change from 100vh to auto */
 }
+
 
 .product-gallery {
     flex: 1;
@@ -58,10 +61,12 @@ html, body {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
     cursor: pointer;
     font-size: 24px;
     border-radius: 5px;
+
+    padding: 12px 16px;
+    z-index: 10;
 }
 
 .prev-btn { left: 10px; }
@@ -171,76 +176,76 @@ form {
 
 @media screen and (max-width: 768px) {
     .product-container {
-        flex-direction: column; /* Stack elements vertically */
-        height: auto; /* Allow scrolling */
-        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
     }
 
     .product-gallery {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .main-image {
-        width: 100%; /* Full width */
-        height: auto; /* Adjust height automatically */
+        width: 100%;
+        height: auto;
+        max-height: 300px;
     }
 
     .main-image img {
-        max-height: 300px; /* Limit height */
-    }
-
-    .prev-btn, .next-btn {
-        font-size: 18px;
-        padding: 5px;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
     }
 
     .product-details {
         width: 100%;
-        padding: 15px;
-        text-align: center; /* Center align text */
+        padding: 0;
+        text-align: left;
     }
 
-    .form-row {
+    .selection-row {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .selection-row select,
+    .selection-row input {
+        width: 100%;
     }
 
     .form-row input,
     .form-row textarea {
-        width: 90%; /* Make inputs wider */
+        width: 100%;
     }
 
     .submit-btn {
-        width: 90%;
-    }
-
-    .nav-links {
-        display: none; /* Hide full menu */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
-        background: white;
-        text-align: center;
-        padding: 10px 0;
     }
 
-    .nav-links.active {
-        display: flex;
+    .add-another {
+        justify-content: center;
     }
 
-    .nav-links li {
-        display: block;
-        padding: 10px 0;
+    .prev-btn,
+    .next-btn {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 15px;
     }
 
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        position: absolute;
-        right: 20px;
-        top: 15px;
+    h1 {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 18px;
     }
 }
