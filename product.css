@@ -274,7 +274,7 @@ form {
         width: 100%;
         display: flex;
         gap: 8px;
-        margin-bottom: 5px;
+        margin-bottom: 14px;
     }
 
     .selection-row label {
@@ -298,12 +298,9 @@ form {
     }
 
     .add-another {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        margin: 5px 0;
+        display: none;
     }
+    
 
     .form-row {
         width: 100%;
