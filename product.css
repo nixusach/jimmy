@@ -12,23 +12,20 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Prevents unwanted scrolling */
 }
 
 .product-container {
     display: flex;
-    flex-direction: row; /* default: desktop */
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     max-width: 1200px;
     margin: auto;
     background: white;
     padding: 20px;
     border-radius: 8px;
-    gap: 20px;
-    flex-wrap: wrap; /* for responsiveness */
-    height: auto; /* change from 100vh to auto */
+    height: 100vh; /* Ensures it fills the full viewport height */
 }
-
 
 .product-gallery {
     flex: 1;
@@ -61,12 +58,10 @@ html, body {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
+    padding: 10px;
     cursor: pointer;
     font-size: 24px;
     border-radius: 5px;
-
-    padding: 12px 16px;
-    z-index: 10;
 }
 
 .prev-btn { left: 10px; }
@@ -174,78 +169,89 @@ form {
 
 
 
-@media screen and (max-width: 768px) {
+/* Mobile Responsive Styles */
+@media only screen and (max-width: 768px) {
     .product-container {
         flex-direction: column;
-        align-items: center;
-        padding: 15px;
+        padding: 10px;
     }
 
     .product-gallery {
         width: 100%;
         margin-bottom: 20px;
+        flex-direction: row;
+        align-items: center;
     }
 
     .main-image {
-        width: 100%;
-        height: auto;
-        max-height: 300px;
+        width: 80%;
+        margin: 0 5px;
     }
 
     .main-image img {
-        width: 100%;
-        height: auto;
         max-height: 300px;
-        object-fit: contain;
+    }
+
+    .prev-btn, .next-btn {
+        position: relative;
+        top: auto;
+        transform: none;
+        margin: 0;
+        padding: 10px;
     }
 
     .product-details {
         width: 100%;
         padding: 0;
-        text-align: left;
     }
 
     .selection-row {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        gap: 10px;
     }
 
-    .selection-row select,
-    .selection-row input {
+    .selection-row label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .selection-row select, 
+    .selection-row input[type="number"] {
         width: 100%;
     }
 
-    .form-row input,
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .form-row input, 
     .form-row textarea {
-        width: 100%;
-    }
-
-    .submit-btn {
         width: 100%;
     }
 
     .add-another {
         justify-content: center;
+        margin: 15px 0;
     }
 
-    .prev-btn,
-    .next-btn {
-        font-size: 18px;
-        padding: 8px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    body {
-        font-size: 15px;
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
     }
 
-    h1 {
-        font-size: 20px;
+    /* Adjust form elements for better mobile UX */
+    input, select, textarea {
+        font-size: 16px; /* Prevents zooming on focus in mobile browsers */
     }
 
-    .price {
-        font-size: 18px;
+    input[type="tel"] {
+        /* Ensures numeric keypad on mobile */
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
     }
 }
