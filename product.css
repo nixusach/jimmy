@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
-    background: #14213d;
+    background: #212529;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -22,7 +22,7 @@ html, body {
     align-items: center;
     max-width: 1200px;
     margin: auto;
-    background: #14213d;
+    background: #212529;
     padding: 20px;
     border-radius: 8px;
     height: 100vh; /* Ensures it fills the full viewport height */
