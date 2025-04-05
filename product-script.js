@@ -20,7 +20,7 @@ document.getElementById("add-more").addEventListener("click", function () {
         </select>  
 
         <label>Quantity:</label>
-        <input type="number" name="الكمية" value="1" min="1">
+        <input type="number" name="quantity" value="الكمية" min="1">
 
         <button type="button" class="remove-btn">Remove</button>
     `;
