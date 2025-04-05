@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Populate color dropdown
     const colorSelect = document.getElementById("color-select");
     colorSelect.innerHTML = `
-        <option value="Red">Red</option>
-        <option value="Blue">Blue</option>
-        <option value="Cyan">Cyan</option>
-        <option value="Rose">Rose</option>
+        <option value="بني">Red</option>
+        <option value="أزرق">Blue</option>
+        <option value="سماوي">Cyan</option>
+        <option value="بنفسجي">Rose</option>
     `;
 
     // Populate size dropdown (Only one size)
