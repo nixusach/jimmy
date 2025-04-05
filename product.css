@@ -106,6 +106,7 @@ form {
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .add-another .plus-icon {
