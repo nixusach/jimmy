@@ -1,3 +1,5 @@
+let counter = 1;
+
 document.getElementById("add-more").addEventListener("click", function () {
     let container = document.getElementById("selection-container");
 
@@ -5,22 +7,27 @@ document.getElementById("add-more").addEventListener("click", function () {
     let newRow = document.createElement("div");
     newRow.classList.add("selection-row");
 
+    // Set unique IDs for each field
+    const colorId = `color-select-${counter}`;
+    const sizeId = `size-select-${counter}`;
+    const qtyId = `quantity-${counter}`;
+
     newRow.innerHTML = `
-        <label>Color:</label>
-        <select name="color">
-            <option value="Brown">بني</option>
-            <option value="Bleu">أزرق</option>
-            <option value="Cyan">سماوي</option>
-            <option value="Purple">بنفسجي</option>
+        <label for="${colorId}">Color:</label>
+        <select id="${colorId}" name="color_${counter}">
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Cyan">Cyan</option>
+            <option value="Rose">Rose</option>
         </select>  
 
-        <label>Size:</label>
-        <select name="size" disabled>
+        <label for="${sizeId}">Size:</label>
+        <select id="${sizeId}" name="size_${counter}" disabled>
             <option value="20cm x 28cm">20cm x 28cm</option>
         </select>  
 
-        <label>Quantity:</label>
-        <input type="number" name="quantity" value="الكمية" min="1">
+        <label for="${qtyId}">Quantity:</label>
+        <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
         <button type="button" class="remove-btn">Remove</button>
     `;
@@ -32,7 +39,10 @@ document.getElementById("add-more").addEventListener("click", function () {
     newRow.querySelector(".remove-btn").addEventListener("click", function () {
         container.removeChild(newRow);
     });
+
+    counter++; // Increment counter for next use
 });
+
 
 // ----------------- Manually Set Product Details -----------------
 document.addEventListener("DOMContentLoaded", function () {
@@ -41,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("product-price").textContent = "2000 DA";
 
     // Fixed images
-    const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg"];
+    const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
     let currentImageIndex = 0;
     const productImage = document.getElementById("product-image");
     const prevButton = document.querySelector(".prev-btn");
@@ -57,10 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Populate color dropdown
     const colorSelect = document.getElementById("color-select");
     colorSelect.innerHTML = `
-        <option value="Brown">بني</option>
-        <option value="Bleu">أزرق</option>
-        <option value="Cyan">سماوي</option>
-        <option value="Purple">بنفسجي</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Cyan">Cyan</option>
+        <option value="Rose">Rose</option>
     `;
 
     // Populate size dropdown (Only one size)
