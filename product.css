@@ -251,81 +251,92 @@ h1 {
         margin-right: 0;
         padding: 20px 15px;
         height: auto;
+        text-align: center; /* Center title and price */
     }
 
     h1 {
         font-size: 22px;
-        text-align: center; /* Center the title */
+        margin-bottom: 10px;
     }
 
     .price {
         font-size: 20px;
-        text-align: center; /* Center the price */
+        margin-bottom: 15px;
     }
 
     .description {
         font-size: 15px;
         padding-right: 10px;
         border-right: 2px solid #f0f0f0;
+        margin-bottom: 15px;
     }
 
     .selection-row {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px; /* Consistent spacing */
         align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .selection-row label {
+        font-size: 15px; /* Consistent font size */
+        margin-bottom: 5px;
+        display: block;
+        width: 100%;
     }
 
     .selection-row select,
     .selection-row input[type="number"] {
         width: 100%;
+        font-size: 15px; /* Consistent font size */
+        padding: 10px;
     }
 
     .selection-row input[type="number"] {
-        text-align: right; /* Align quantity input to the right */
+        text-align: right; /* Align quantity input to right */
     }
 
     .add-another {
-        flex-direction: row;
-        justify-content: center; /* Center the 'Add Another' button */
+        display: flex;
+        justify-content: center; /* Center the button */
+        margin: 20px 0;
         width: 100%;
     }
 
-    .add-another button {
-        font-size: 18px;
-        background-color: blue;
+    .add-another-btn {
+        font-size: 18px; /* Bigger font size */
+        padding: 12px 24px;
+        background-color: #0066cc; /* Blue background */
         color: white;
-        padding: 12px 25px;
-        border-radius: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: auto;
+    }
+
+    .form-row {
+        margin-bottom: 20px; /* Consistent spacing */
     }
 
     .form-row label {
         position: static;
-        margin-bottom: 5px;
-        font-size: 14px;
-        font-family: Arial, sans-serif; /* Uniform font for form elements */
-    }
-
-    .form-row {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
+        font-size: 15px; /* Consistent font size */
+        display: block;
     }
 
     .form-row input,
-    .form-row select,
-    .form-row textarea {
-        font-size: 15px;
+    .form-row textarea,
+    .form-row select {
+        font-size: 15px; /* Consistent font size */
         padding: 10px;
-        font-family: Arial, sans-serif; /* Uniform font for form elements */
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .submit-btn {
         font-size: 16px;
         padding: 12px;
-    }
-
-    /* Ensure consistent spacing between form elements */
-    .form-row {
-        display: flex;
-        flex-direction: column;
-        gap: 10px; /* Same gap for all label/input/select items */
+        width: 100%;
     }
 }
