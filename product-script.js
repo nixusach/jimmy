@@ -9,6 +9,10 @@ document.getElementById("add-more").addEventListener("click", function () {
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
 
+    // Check if the screen width is less than or equal to 768px (for mobile)
+    const isMobile = window.innerWidth <= 768;
+
+    // Create dynamic content for the new row
     newRow.innerHTML = `
         <label for="${colorId}">اللون:</label>
         <select id="${colorId}" name="color_${counter}">
@@ -18,7 +22,7 @@ document.getElementById("add-more").addEventListener("click", function () {
             <option value="وردي">وردي</option>
         </select>  
 
-        <label for="${sizeId}">المقاس:</label>
+        <label for="${sizeId}">${isMobile ? `المنتج رقم (${counter + 1})` : 'المقاس:'}</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
             <option value="28 × 20">28 × 20سم</option>
         </select>  
@@ -58,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Arabic color options
     const colorSelect = document.getElementById("color-select");
-    colorSelect.innerHTML = `
+    colorSelect.innerHTML = `  
         <option value="أحمر">أحمر</option>
         <option value="أزرق">أزرق</option>
         <option value="سماوي">سماوي</option>
