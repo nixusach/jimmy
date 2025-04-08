@@ -1,7 +1,6 @@
 let counter = 1;
 
 document.getElementById("add-more").addEventListener("click", function () {
-    counter++;
     let container = document.getElementById("selection-container");
     let newRow = document.createElement("div");
     newRow.classList.add("selection-row");
@@ -9,13 +8,18 @@ document.getElementById("add-more").addEventListener("click", function () {
     const colorId = `color-select-${counter}`;
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
-    
-    // Check if mobile view and counter > 1
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const productNum = (isMobile && counter > 1) ? ` (المنتج رقم ${counter})` : '';
 
+    // Check if the screen width is less than or equal to 768px (for mobile)
+    const isMobile = window.innerWidth <= 768;
+
+    // Create a horizontal line before the first field
+    const line = document.createElement("hr");
+    line.style.width = "75%";
+    line.style.margin = "10px 0";  // Optional: Add margin for spacing
+
+    // Create dynamic content for the new row
     newRow.innerHTML = `
-        <label for="${colorId}">اللون${productNum}:</label>
+        <label for="${colorId}">اللون:</label>
         <select id="${colorId}" name="color_${counter}">
             <option value="أحمر">أحمر</option>
             <option value="أزرق">أزرق</option>
@@ -23,23 +27,31 @@ document.getElementById("add-more").addEventListener("click", function () {
             <option value="وردي">وردي</option>
         </select>  
 
-        <label for="${sizeId}">المقاس${productNum}:</label>
+        <label for="${sizeId}">${isMobile ? `المنتج رقم (${counter + 1})` : 'المقاس:'}</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
             <option value="28 × 20">28 × 20سم</option>
         </select>  
 
-        <label for="${qtyId}">الكمية${productNum}:</label>
+        <label for="${qtyId}">الكمية:</label>
         <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
         <button type="button" class="remove-btn">إزالة</button>
     `;
 
+    // Insert the horizontal line before the first field
+    container.appendChild(line);
+
+    // Append the new row with the fields
     container.appendChild(newRow);
 
     newRow.querySelector(".remove-btn").addEventListener("click", function () {
         container.removeChild(newRow);
+        container.removeChild(line); // Remove the line when the row is removed
     });
+
+    counter++;
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // Set Arabic product details
