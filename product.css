@@ -350,7 +350,7 @@ h1 {
             cursor: pointer;
         }
 
-        .remove-btn {
+        .remove-btn button {
             font-size: 12px;
             background-color: red;
             color: white;
