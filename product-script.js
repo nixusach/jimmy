@@ -35,7 +35,7 @@ document.getElementById("add-more").addEventListener("click", function () {
         <label for="${qtyId}">الكمية${productNum}:</label>
         <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
-        <button type="button" class="remove-btn">إزالة</button>
+        <button type="button" class="remove-btn">إزالة المنتج المضاف</button>
     `;
 
     container.appendChild(newRow);
