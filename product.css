@@ -271,13 +271,17 @@ h1 {
 
     .selection-row {
         flex-direction: column;
-        gap: 10px;
+        gap: 13px; /* Space between selection rows */
         align-items: flex-start;
+        margin-bottom: 13px; /* Space between selection rows */
     }
 
     .selection-row select,
     .selection-row input[type="number"] {
         width: 100%;
+        margin-left: 10px; /* Space between label and select/input */
+        font-family: Arial, sans-serif; /* Same font as form elements */
+        font-size: 15px; /* Same font size as form elements */
     }
 
     .selection-row input[type="number"] {
@@ -306,7 +310,7 @@ h1 {
     }
 
     .form-row {
-        margin-bottom: 15px;
+        margin-bottom: 13px; /* Space between form rows */
     }
 
     .form-row input,
@@ -315,6 +319,7 @@ h1 {
         font-size: 15px;
         padding: 10px;
         font-family: Arial, sans-serif; /* Uniform font for form elements */
+        margin-left: 10px; /* Space between label and input/select */
     }
 
     .submit-btn {
@@ -326,6 +331,7 @@ h1 {
     .form-row {
         display: flex;
         flex-direction: column;
-        gap: 10px; /* Same gap for all label/input/select items */
+        gap: 13px; /* Same gap for all label/input/select items */
     }
 }
+
