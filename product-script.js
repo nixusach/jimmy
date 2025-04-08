@@ -48,16 +48,11 @@ document.getElementById("add-more").addEventListener("click", function () {
 // Add this CSS for the separator
 const style = document.createElement('style');
 style.textContent = `
-    .product-separator {
-        width: 75%;
-        height: 3px;
-        background-color: black;
-        margin: 15px auto;
-    }
-    
     @media (max-width: 768px) {
         .product-separator {
             margin: 10px auto;
+            width: 75%;
+            border-top: 3px dashed black;
         }
     }
 `;
