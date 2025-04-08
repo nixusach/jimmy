@@ -255,83 +255,100 @@ h1 {
 
     h1 {
         font-size: 22px;
-        text-align: center; /* Center the title */
+        text-align: center;
     }
 
     .price {
         font-size: 20px;
-        text-align: center; /* Center the price */
+        text-align: center;
     }
 
     .description {
         font-size: 15px;
         padding-right: 10px;
         border-right: 2px solid #f0f0f0;
+        margin-bottom: 20px;
     }
 
-    .selection-row {
+    /* Unified styling for both form rows and selection rows */
+    .selection-row, .form-row {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 13px; /* Space between selection rows */
+        gap: 8px;
+        margin-bottom: 20px;
     }
-    
-    .selection-row label {
-        font-weight: normal;
-        margin-bottom: 5px;
+
+    .selection-row label, .form-row label {
+        font-size: 15px;
+        color: #555;
+        font-weight: 500;
+        margin-bottom: 0;
     }
 
     .selection-row select,
-    .selection-row input[type="number"] {
+    .selection-row input[type="number"],
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
         width: 100%;
-        font-size: 15px; /* Same font size as form elements */
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 15px;
+        background: white;
     }
 
     .selection-row input[type="number"] {
-        text-align: right; /* Align quantity input to the right */
+        text-align: right;
+    }
+
+    .form-row textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    /* Remove absolute positioning for labels */
+    .form-row label {
+        position: static;
+        background: transparent;
+        padding: 0;
     }
 
     .add-another {
-        flex-direction: row;
-        justify-content: center; /* Center the 'Add Another' button */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #0078ff;
+        font-weight: bold;
+        margin-bottom: 20px;
         width: 100%;
     }
 
     .add-another button {
         font-size: 14px;
-        background-color: blue;
+        background-color: #0078ff;
         color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-    }
-
-    .form-row label {
-        position: static;
-        margin-bottom: 5px;
-        font-size: 15px;
-    }
-
-    .form-row {
-        margin-bottom: 13px; /* Space between form rows */
-    }
-
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-        font-size: 15px;
-        padding: 10px;
-        margin-left: 10px; /* Space between label and input/select */
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
 
     .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background: #0078ff;
+        color: white;
+        border: none;
+        border-radius: 4px;
         font-size: 16px;
-        padding: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
     }
 
-    /* Ensure consistent spacing between form elements */
-    .form-row {
-        display: flex;
-        flex-direction: column;
-        gap: 13px; /* Same gap for all label/input/select items */
+    .submit-btn:hover {
+        background: #0060cc;
     }
 }
-
