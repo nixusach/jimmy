@@ -10,9 +10,9 @@ document.getElementById("add-more").addEventListener("click", function () {
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
     
-    // Check if mobile view
+    // Check if mobile view and counter > 1
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const productNum = isMobile ? ` (المنتج رقم ${counter})` : '';
+    const productNum = (isMobile && counter > 1) ? ` (المنتج رقم ${counter})` : '';
 
     newRow.innerHTML = `
         <label for="${colorId}">اللون${productNum}:</label>
@@ -46,17 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("product-name").textContent = "مصحف التجويد الملون";
     document.getElementById("product-price").textContent = "4500 دج";
 
-    // Update initial labels for mobile only
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    if (isMobile) {
-        const initialLabels = document.querySelectorAll(".selection-row label");
-        initialLabels.forEach(label => {
-            const text = label.textContent;
-            if (!text.includes("المنتج رقم")) {
-                label.textContent = text.replace(":", ` (المنتج رقم 1):`);
-            }
-        });
-    }
+    // No need to update initial labels since we don't want numbering for counter=1
 
     const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg"];
     let currentImageIndex = 0;
