@@ -274,12 +274,15 @@ h1 {
         align-items: flex-start;
         margin-bottom: 18px; /* Space between selection rows */
     }
+    
+    .selection-row label {
+        font-weight: normal;
+    }
 
     .selection-row select,
     .selection-row input[type="number"] {
         width: 100%;
         margin-left: 10px; /* Space between label and select/input */
-        font-family: Arial, sans-serif; /* Same font as form elements */
         font-size: 15px; /* Same font size as form elements */
     }
 
