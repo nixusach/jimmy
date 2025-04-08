@@ -240,19 +240,18 @@ h1 {
     }
 
     .prev-btn, .next-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 45%;
         font-size: 22px;
         padding: 8px;
-        z-index: 10;
     }
 
-    .prev-btn { 
-        left: 10px; 
-    }
-    .next-btn { 
-        right: 10px; 
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
+
+    .product-details {
+        margin-right: 0;
+        padding: 20px 15px;
+        height: auto;
     }
 
     h1 {
