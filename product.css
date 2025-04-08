@@ -349,6 +349,14 @@ h1 {
             border-radius: 4px;
             cursor: pointer;
         }
+
+        .remove-btn {
+            font-size: 12px;
+            background-color: red;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 3px;
+        }
     
         /* Submit button styling */
         .submit-btn {
