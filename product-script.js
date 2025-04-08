@@ -50,8 +50,8 @@ const style = document.createElement('style');
 style.textContent = `
     .product-separator {
         width: 75%;
-        height: 1px;
-        background-color: #ddd;
+        height: 3px;
+        background-color: black;
         margin: 15px auto;
     }
     
