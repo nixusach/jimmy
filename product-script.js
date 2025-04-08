@@ -1,6 +1,7 @@
 let counter = 1;
 
 document.getElementById("add-more").addEventListener("click", function () {
+    counter++;
     let container = document.getElementById("selection-container");
     let newRow = document.createElement("div");
     newRow.classList.add("selection-row");
@@ -8,13 +9,13 @@ document.getElementById("add-more").addEventListener("click", function () {
     const colorId = `color-select-${counter}`;
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
+    
+    // Check if mobile view
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const productNum = isMobile ? ` (المنتج رقم ${counter})` : '';
 
-    // Check if the screen width is less than or equal to 768px (for mobile)
-    const isMobile = window.innerWidth <= 768;
-
-    // Create dynamic content for the new row
     newRow.innerHTML = `
-        <label for="${colorId}">اللون:</label>
+        <label for="${colorId}">اللون${productNum}:</label>
         <select id="${colorId}" name="color_${counter}">
             <option value="أحمر">أحمر</option>
             <option value="أزرق">أزرق</option>
@@ -22,12 +23,12 @@ document.getElementById("add-more").addEventListener("click", function () {
             <option value="وردي">وردي</option>
         </select>  
 
-        <label for="${sizeId}">${isMobile ? `المنتج رقم (${counter + 1})` : 'المقاس:'}</label>
+        <label for="${sizeId}">المقاس${productNum}:</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
             <option value="28 × 20">28 × 20سم</option>
         </select>  
 
-        <label for="${qtyId}">الكمية:</label>
+        <label for="${qtyId}">الكمية${productNum}:</label>
         <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
         <button type="button" class="remove-btn">إزالة</button>
@@ -38,14 +39,24 @@ document.getElementById("add-more").addEventListener("click", function () {
     newRow.querySelector(".remove-btn").addEventListener("click", function () {
         container.removeChild(newRow);
     });
-
-    counter++;
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     // Set Arabic product details
     document.getElementById("product-name").textContent = "مصحف التجويد الملون";
     document.getElementById("product-price").textContent = "4500 دج";
+
+    // Update initial labels for mobile only
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (isMobile) {
+        const initialLabels = document.querySelectorAll(".selection-row label");
+        initialLabels.forEach(label => {
+            const text = label.textContent;
+            if (!text.includes("المنتج رقم")) {
+                label.textContent = text.replace(":", ` (المنتج رقم 1):`);
+            }
+        });
+    }
 
     const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg"];
     let currentImageIndex = 0;
@@ -62,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Arabic color options
     const colorSelect = document.getElementById("color-select");
-    colorSelect.innerHTML = `  
+    colorSelect.innerHTML = `
         <option value="أحمر">أحمر</option>
         <option value="أزرق">أزرق</option>
         <option value="سماوي">سماوي</option>
