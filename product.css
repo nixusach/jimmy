@@ -271,9 +271,8 @@ h1 {
 
     .selection-row {
         flex-direction: column;
-        gap: 13px; /* Space between selection rows */
         align-items: flex-start;
-        margin-bottom: 13px; /* Space between selection rows */
+        margin-bottom: 18px; /* Space between selection rows */
     }
 
     .selection-row select,
@@ -295,18 +294,17 @@ h1 {
     }
 
     .add-another button {
-        font-size: 18px;
+        font-size: 14px;
         background-color: blue;
         color: white;
-        padding: 12px 25px;
+        padding: 10px 20px;
         border-radius: 5px;
     }
 
     .form-row label {
         position: static;
         margin-bottom: 5px;
-        font-size: 14px;
-        font-family: Arial, sans-serif; /* Uniform font for form elements */
+        font-size: 15px;
     }
 
     .form-row {
@@ -318,7 +316,6 @@ h1 {
     .form-row textarea {
         font-size: 15px;
         padding: 10px;
-        font-family: Arial, sans-serif; /* Uniform font for form elements */
         margin-left: 10px; /* Space between label and input/select */
     }
 
