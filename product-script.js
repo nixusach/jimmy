@@ -2,55 +2,47 @@ let counter = 1;
 
 document.getElementById("add-more").addEventListener("click", function () {
     let container = document.getElementById("selection-container");
-
-    // Create a new selection row
     let newRow = document.createElement("div");
     newRow.classList.add("selection-row");
 
-    // Set unique IDs for each field
     const colorId = `color-select-${counter}`;
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
 
     newRow.innerHTML = `
-        <label for="${colorId}">Color:</label>
+        <label for="${colorId}">اللون:</label>
         <select id="${colorId}" name="color_${counter}">
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Cyan">Cyan</option>
-            <option value="Rose">Rose</option>
+            <option value="أحمر">أحمر</option>
+            <option value="أزرق">أزرق</option>
+            <option value="سماوي">سماوي</option>
+            <option value="وردي">وردي</option>
         </select>  
 
-        <label for="${sizeId}">Size:</label>
+        <label for="${sizeId}">المقاس:</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
-            <option value="20cm x 28cm">20cm x 28cm</option>
+            <option value="28 × 20">28 × 20سم</option>
         </select>  
 
-        <label for="${qtyId}">Quantity:</label>
+        <label for="${qtyId}">الكمية:</label>
         <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
-        <button type="button" class="remove-btn">Remove</button>
+        <button type="button" class="remove-btn">إزالة</button>
     `;
 
-    // Append new row to container
     container.appendChild(newRow);
 
-    // Add event listener to remove button
     newRow.querySelector(".remove-btn").addEventListener("click", function () {
         container.removeChild(newRow);
     });
 
-    counter++; // Increment counter for next use
+    counter++;
 });
 
-
-// ----------------- Manually Set Product Details -----------------
 document.addEventListener("DOMContentLoaded", function () {
-    // Set fixed product details
-    document.getElementById("product-name").textContent = "Sample Product";
-    document.getElementById("product-price").textContent = "2000 DA";
+    // Set Arabic product details
+    document.getElementById("product-name").textContent = "مصحف التجويد الملون";
+    document.getElementById("product-price").textContent = "4500 دج";
 
-    // Fixed images
     const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg"];
     let currentImageIndex = 0;
     const productImage = document.getElementById("product-image");
@@ -64,32 +56,30 @@ document.addEventListener("DOMContentLoaded", function () {
     prevButton.addEventListener("click", () => changeImage(-1));
     nextButton.addEventListener("click", () => changeImage(1));
 
-    // Populate color dropdown
+    // Arabic color options
     const colorSelect = document.getElementById("color-select");
     colorSelect.innerHTML = `
-        <option value="Red">Red</option>
-        <option value="Blue">Blue</option>
-        <option value="Cyan">Cyan</option>
-        <option value="Rose">Rose</option>
+        <option value="أحمر">أحمر</option>
+        <option value="أزرق">أزرق</option>
+        <option value="سماوي">سماوي</option>
+        <option value="وردي">وردي</option>
     `;
 
-    // Populate size dropdown (Only one size)
+    // Arabic size option
     const sizeSelect = document.getElementById("size-select");
-    sizeSelect.innerHTML = `<option value="20cm x 28cm">20cm x 28cm</option>`;
-    sizeSelect.disabled = true; // Since there's only one option
+    sizeSelect.innerHTML = `<option value="28 × 20سم">28سم × 20سم</option>`;
+    sizeSelect.disabled = true;
 
-    // Faster and smoother image transition effect
     function changeImage(direction) {
         currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-        
         productImage.style.transition = "opacity 0.15s ease-in-out, transform 0.15s ease-in-out";
         productImage.style.opacity = "0.3";
-        productImage.style.transform = "scale(0.98)"; // Slight shrink effect
-
+        productImage.style.transform = "scale(0.98)";
+        
         setTimeout(() => {
             productImage.src = images[currentImageIndex];
             productImage.style.opacity = "1";
             productImage.style.transform = "scale(1)";
-        }, 100); // Faster transition effect
+        }, 100);
     }
 });
