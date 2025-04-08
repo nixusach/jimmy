@@ -1,6 +1,7 @@
 let counter = 1;
 
 document.getElementById("add-more").addEventListener("click", function () {
+    counter++;
     let container = document.getElementById("selection-container");
     let newRow = document.createElement("div");
     newRow.classList.add("selection-row");
@@ -8,18 +9,13 @@ document.getElementById("add-more").addEventListener("click", function () {
     const colorId = `color-select-${counter}`;
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
+    
+    // Check if mobile view and counter > 1
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const productNum = (isMobile && counter > 1) ? ` (المنتج رقم ${counter})` : '';
 
-    // Check if the screen width is less than or equal to 768px (for mobile)
-    const isMobile = window.innerWidth <= 768;
-
-    // Create a horizontal line before the first field
-    const line = document.createElement("hr");
-    line.style.width = "75%";
-    line.style.margin = "10px 0";  // Optional: Add margin for spacing
-
-    // Create dynamic content for the new row
     newRow.innerHTML = `
-        <label for="${colorId}">اللون:</label>
+        <label for="${colorId}">اللون${productNum}:</label>
         <select id="${colorId}" name="color_${counter}">
             <option value="أحمر">أحمر</option>
             <option value="أزرق">أزرق</option>
@@ -27,31 +23,71 @@ document.getElementById("add-more").addEventListener("click", function () {
             <option value="وردي">وردي</option>
         </select>  
 
-        <label for="${sizeId}">${isMobile ? `المنتج رقم (${counter + 1})` : 'المقاس:'}</label>
+        <label for="${sizeId}">المقاس${productNum}:</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
             <option value="28 × 20">28 × 20سم</option>
         </select>  
 
-        <label for="${qtyId}">الكمية:</label>
+        <label for="${qtyId}">الكمية${productNum}:</label>
         <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
         <button type="button" class="remove-btn">إزالة</button>
     `;
 
-    // Insert the horizontal line before the first field
-    container.appendChild(line);
-
-    // Append the new row with the fields
     container.appendChild(newRow);
 
     newRow.querySelector(".remove-btn").addEventListener("click", function () {
         container.removeChild(newRow);
-        container.removeChild(line); // Remove the line when the row is removed
     });
-
-    counter++;
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Set Arabic product details
+    document.getElementById("product-name").textContent = "مصحف التجويد الملون";
+    document.getElementById("product-price").textContent = "4500 دج";
+
+    // No need to update initial labels since we don't want numbering for counter=1
+
+    const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg"];
+    let currentImageIndex = 0;
+    const productImage = document.getElementById("product-image");
+    const prevButton = document.querySelector(".prev-btn");
+    const nextButton = document.querySelector(".next-btn");
+
+    if (images.length > 0) {
+        productImage.src = images[0];
+    }
+
+    prevButton.addEventListener("click", () => changeImage(-1));
+    nextButton.addEventListener("click", () => changeImage(1));
+
+    // Arabic color options
+    const colorSelect = document.getElementById("color-select");
+    colorSelect.innerHTML = `
+        <option value="أحمر">أحمر</option>
+        <option value="أزرق">أزرق</option>
+        <option value="سماوي">سماوي</option>
+        <option value="وردي">وردي</option>
+    `;
+
+    // Arabic size option
+    const sizeSelect = document.getElementById("size-select");
+    sizeSelect.innerHTML = `<option value="28 × 20سم">28سم × 20سم</option>`;
+    sizeSelect.disabled = true;
+
+    function changeImage(direction) {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+        productImage.style.transition = "opacity 0.15s ease-in-out, transform 0.15s ease-in-out";
+        productImage.style.opacity = "0.3";
+        productImage.style.transform = "scale(0.98)";
+        
+        setTimeout(() => {
+            productImage.src = images[currentImageIndex];
+            productImage.style.opacity = "1";
+            productImage.style.transform = "scale(1)";
+        }, 100);
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     // Set Arabic product details
