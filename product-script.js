@@ -21,8 +21,7 @@ document.getElementById("add-more").addEventListener("click", function () {
         ${separator}
         <label for="${colorId}">اللون${productNum}:</label>
         <select id="${colorId}" name="color_${counter}">
-            <option value="أحمر">أحمر</option>
-            <option value="أزرق">أزرق</option>
+            <option value="بني">بني</option>
             <option value="سماوي">سماوي</option>
             <option value="وردي">وردي</option>
         </select>  
@@ -60,7 +59,7 @@ document.head.appendChild(style);
 
 document.addEventListener("DOMContentLoaded", function () {
     // Set Arabic product details
-    document.getElementById("product-name").textContent = "مصحف التجويد الملون";
+    document.getElementById("product-name").textContent = "مصحف الفاخر";
     document.getElementById("product-price").textContent = "4500 دج";
 
     const images = ["4.jpg", "1.jpg", "2.jpg", "3.jpg"];
@@ -79,8 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Arabic color options
     const colorSelect = document.getElementById("color-select");
     colorSelect.innerHTML = `
-        <option value="أحمر">أحمر</option>
-        <option value="أزرق">أزرق</option>
+        <option value="بني">بني</option>
         <option value="سماوي">سماوي</option>
         <option value="وردي">وردي</option>
     `;
