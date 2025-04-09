@@ -117,6 +117,10 @@ h1 {
     text-justify: inter-word;
 }
 
+.description b {
+    font-weight: 600;
+}
+
 /* Form Elements */
 #order-form {
     display: flex;
