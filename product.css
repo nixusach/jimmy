@@ -34,7 +34,7 @@ body {
     position: fixed;
     width: 42%;
     height: 90vh; /* Slightly reduced height */
-    top: 5vh; /* Centers vertically with 5% space top/bottom */
+    top: 4vh; /* Centers vertically with 5% space top/bottom */
     display: flex;
     align-items: center;
     justify-content: center;
