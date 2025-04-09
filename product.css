@@ -212,6 +212,11 @@ h1 {
     background: #0060cc;
 }
 
+ul li {
+    margin-right: 10px; /* adds space to the right (start in RTL) */
+}
+
+
 
 @media (max-width: 768px) {
     html, body {
