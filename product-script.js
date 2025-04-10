@@ -10,10 +10,11 @@ document.getElementById("add-more").addEventListener("click", function () {
     const sizeId = `size-select-${counter}`;
     const qtyId = `quantity-${counter}`;
     
-    // Check if mobile view and counter > 1
+    // Check if mobile view
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const productNum = (isMobile && counter > 1) ? ` (المنتج رقم ${counter})` : '';
     const separator = (isMobile && counter > 1) ? `<div class="product-separator"></div>` : '';
+    const removeBtnText = isMobile ? "إزالة المنتج المضاف" : "إزالة المنتج";
 
     newRow.innerHTML = `
         ${separator}
@@ -32,7 +33,7 @@ document.getElementById("add-more").addEventListener("click", function () {
         <label for="${qtyId}">الكمية${productNum}:</label>
         <input type="number" id="${qtyId}" name="quantity_${counter}" value="1" min="1">
 
-        <button type="button" class="remove-btn">إزالة المنتج المضاف</button>
+        <button type="button" class="remove-btn">${removeBtnText}</button>
     `;
 
     container.appendChild(newRow);
@@ -41,6 +42,8 @@ document.getElementById("add-more").addEventListener("click", function () {
         container.removeChild(newRow);
     });
 });
+
+// ... rest of your existing JavaScript code ...
 
 // Inject CSS for the separator and remove button
 const style = document.createElement('style');
