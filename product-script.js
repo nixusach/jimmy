@@ -14,7 +14,7 @@ document.getElementById("add-more").addEventListener("click", function () {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const productNum = (isMobile && counter > 1) ? ` (المنتج رقم ${counter})` : '';
     const separator = (isMobile && counter > 1) ? `<div class="product-separator"></div>` : '';
-    const removeBtnText = isMobile ? "إزالة المنتج المضاف" : "إزالة المنتج";
+    const removeBtnText = isMobile ? "إزالة المنتج المضاف" : "إزالة";
 
     newRow.innerHTML = `
         ${separator}
