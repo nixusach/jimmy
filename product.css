@@ -236,13 +236,6 @@ ul li {
     background-color: #c62828;
 }
 
-/* Then add this mobile override */
-@media (max-width: 768px) {
-    .remove-btn {
-        align-self: flex-start; /* Reset for mobile */
-        margin-right: 0; /* Reset for mobile */
-    }
-}
 
 /* Mobile Styles */
 @media (max-width: 768px) {
