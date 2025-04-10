@@ -131,6 +131,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
     margin-bottom: 15px;
 }
 
@@ -222,14 +223,12 @@ ul li {
     color: #fff;
     border: none;
     padding: 8px 12px;
-    margin-top: 10px;
+    margin-top: 0; /* Remove margin if it was pushing it down */
     cursor: pointer;
     border-radius: 6px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    /* Add these two lines for desktop centering */
-    align-self: center;
-    margin-right: auto;
+    align-self: center; /* Optional: ensures the button aligns within flex context */
 }
 
 .remove-btn:hover {
