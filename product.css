@@ -222,12 +222,13 @@ ul li {
     color: #fff;
     border: none;
     padding: 8px 12px;
-    margin-top: 0; /* Remove margin if it was pushing it down */
     cursor: pointer;
     border-radius: 6px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    align-self: center; /* Optional: ensures the button aligns within flex context */
+    /* New properties for vertical centering */
+    margin: 0;
+    align-self: center; /* This is key - aligns the button vertically within the flex container */
 }
 
 .remove-btn:hover {
