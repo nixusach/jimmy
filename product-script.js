@@ -27,7 +27,8 @@ document.getElementById("add-more").addEventListener("click", function () {
 
         <label for="${sizeId}">المقاس${productNum}:</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
-            <option value="28 × 20">28 × 20سم</option>
+            <option value="28 × 20سم">28سم × 20سم</option>
+
         </select>  
 
         <label for="${qtyId}">الكمية${productNum}:</label>
