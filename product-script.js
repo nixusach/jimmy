@@ -13,9 +13,7 @@ document.getElementById("add-more").addEventListener("click", function () {
     // Check if mobile view and counter > 1
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const productNum = (isMobile && counter > 1) ? ` (المنتج رقم ${counter})` : '';
-
-    // Create horizontal line for products after the first one
-    const separator = counter > 1 ? `<div class="product-separator"></div>` : '';
+    const separator = (isMobile && counter > 1) ? `<div class="product-separator"></div>` : '';
 
     newRow.innerHTML = `
         ${separator}
