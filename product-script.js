@@ -44,7 +44,7 @@ document.getElementById("add-more").addEventListener("click", function () {
     });
 });
 
-// Add this CSS for the separator
+// Inject CSS for the separator and remove button
 const style = document.createElement('style');
 style.textContent = `
     @media (max-width: 768px) {
@@ -53,6 +53,22 @@ style.textContent = `
             width: 75%;
             border-top: 3px dashed black;
         }
+    }
+
+    .remove-btn {
+        background-color: #e63946;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .remove-btn:hover {
+        background-color: #c62828;
     }
 `;
 document.head.appendChild(style);
