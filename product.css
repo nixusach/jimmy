@@ -227,10 +227,21 @@ ul li {
     border-radius: 6px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    /* Add these two lines for desktop centering */
+    align-self: center;
+    margin-right: auto;
 }
 
 .remove-btn:hover {
     background-color: #c62828;
+}
+
+/* Then add this mobile override */
+@media (max-width: 768px) {
+    .remove-btn {
+        align-self: flex-start; /* Reset for mobile */
+        margin-right: 0; /* Reset for mobile */
+    }
 }
 
 /* Mobile Styles */
