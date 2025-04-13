@@ -110,6 +110,7 @@ h1 {
     line-height: 1.8;
     color: #555;
     font-size: 17px;
+    border-right: 2px solid #495057;
     padding-right: 15px;
 }
 
@@ -130,7 +131,7 @@ h1 {
     gap: 20px;
 
     /* Add border and spacing */
-    border: 2px solid #0078ff;
+    border: 2px solid #495057;
     border-radius: 8px;
     padding: 20px;
 }
