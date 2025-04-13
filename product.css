@@ -381,7 +381,7 @@ ul li {
 
     .add-another button {
         font-size: 14px;
-        background: linear-gradient(to right, #57cc99, #003566);
+        background: linear-gradient(to right, #003566, #57cc99);
         color: white;
         padding: 12px 20px;
         border: none;
