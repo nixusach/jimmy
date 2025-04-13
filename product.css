@@ -408,7 +408,7 @@ ul li {
     
     .mobile-logo {
         max-width: 70px; /* Slightly smaller logo */
-        height: auto;
+        height: 20px;
     }
     
     .contact-banner {
