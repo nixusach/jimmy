@@ -131,7 +131,7 @@ h1 {
     gap: 20px;
 
     /* Add border and spacing */
-    border: 2px solid #0078ff
+    border: 2px solid #0078ff;
     border-radius: 8px;
     padding: 20px;
 }
