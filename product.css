@@ -19,10 +19,41 @@ body {
     text-align: right;
 }
 
-.mobile-header {
-    display: none;
-}
-
+    .mobile-header {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 15px;
+    }
+    
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    
+    .mobile-logo {
+        max-width: 70px; /* Slightly smaller logo */
+        height: 60px;
+    }
+    
+    .contact-banner {
+        background: linear-gradient(to right, #3b82f6, #8b5cf6);
+        color: white;
+        padding: 10px 0; /* Top/bottom padding only */
+        margin: 0; /* No side margins */
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px; /* Slightly smaller font */
+        white-space: nowrap; /* Ensures single line */
+        overflow: hidden; /* Prevents text wrapping */
+        text-overflow: ellipsis; /* Adds ... if text overflows */
+    }
+    
+    /* Optional: Prevent text from ever wrapping */
+    .contact-banner br {
+        display: none;
+    }
 /* Main Container */
 .product-container {
     display: flex;
