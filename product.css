@@ -308,7 +308,6 @@ ul li {
     
     .description p span {
         font-weight: 600;
-        text-align: center;
         display: block; /* Optional: ensures centering works */
     }
 
