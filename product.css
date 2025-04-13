@@ -305,6 +305,13 @@ ul li {
         padding-right: 10px;
         border-right: 2px solid #f0f0f0;
     }
+    
+    .description p span {
+        font-weight: 600;
+        text-align: center;
+        display: block; /* Optional: ensures centering works */
+    }
+
 
     .selection-row, .form-row {
         display: flex;
