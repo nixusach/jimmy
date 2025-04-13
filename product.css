@@ -373,7 +373,7 @@ ul li {
 
     .add-another button {
         font-size: 14px;
-        background-color: linear-gradient(to right, #3b82f6, #8b5cf6);
+        background: linear-gradient(to right, #3b82f6, #8b5cf6);
         color: white;
         padding: 12px 20px;
         border: none;
@@ -384,7 +384,7 @@ ul li {
     .submit-btn {
         width: 100%;
         padding: 15px;
-        background: #0078ff;
+        background: linear-gradient(to right, #3b82f6, #8b5cf6);
         color: white;
         border: none;
         border-radius: 4px;
