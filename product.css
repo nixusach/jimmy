@@ -266,7 +266,7 @@ ul li {
         width: 100%;
         height: auto;
         top: 0;
-        margin-top: 20px;
+        margin-top: 14px;
     }
 
     .main-image img {
@@ -408,7 +408,7 @@ ul li {
     
     .mobile-logo {
         max-width: 70px; /* Slightly smaller logo */
-        height: 20px;
+        height: 60px;
     }
     
     .contact-banner {
