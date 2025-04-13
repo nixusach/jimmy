@@ -21,43 +21,8 @@ body {
 
 /* Mobile Header - Applies to all screen sizes */
 .mobile-header {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding-top: 15px;
-    background: white;
+    display: hidden;
 }
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 8px;
-}
-
-.mobile-logo {
-    max-width: 70px;
-    height: 60px;
-}
-
-.contact-banner {
-    background: linear-gradient(to right, #3b82f6, #8b5cf6);
-    color: white;
-    padding: 10px 0;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-}
-
-/* Optional: Prevent text from ever wrapping */
-.contact-banner br {
-    display: none;
-}
-
 /* Main Container */
 .product-container {
     display: flex;
