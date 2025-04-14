@@ -302,26 +302,6 @@ ul li {
         text-align: center;
     }
 
-    .separator-line.fancy {
-    position: relative;
-    margin: 25px 0;
-    height: 2px;
-    background: linear-gradient(to left, #0078ff, #00c6ff);
-    border-radius: 4px;
-}
-
-.separator-line.fancy span {
-    position: absolute;
-    top: -12px;
-    right: 50%;
-    transform: translateX(50%);
-    background: white;
-    padding: 0 10px;
-    font-size: 20px;
-    color: #0078ff;
-    font-weight: bold;
-}
-
     .description {
         font-size: 15px;
         padding-right: 10px;
