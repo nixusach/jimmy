@@ -120,6 +120,14 @@ h1 {
     font-weight: 800;
 }
 
+h2 {
+    font-family: 'Cairo Play', sans-serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 800;
+}
+
 .price {
     color: #e60023;
     font-size: 24px;
