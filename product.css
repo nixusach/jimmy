@@ -126,6 +126,7 @@ h2 {
     margin-bottom: 5px;
     color: #333;
     font-weight: 800;
+    text-align: center;
 }
 
 .price {
@@ -325,7 +326,7 @@ ul li {
     margin: 20px 0;
     line-height: 1.8;
     color: #555;
-    font-size: 17px;
+    font-size: 15px;
     border-right: 2px solid #f0f0f0;
     padding-right: 15px;
 }
