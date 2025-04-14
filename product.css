@@ -308,6 +308,10 @@ ul li {
         font-size: 20px;
         text-align: center;
     }
+
+    .description {
+    display: none;
+    }
     
     .mobile-description {
     margin: 20px 0;
