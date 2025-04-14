@@ -512,10 +512,10 @@ ul li {
     width: 100%;
     height: auto;
     display: block;
+    clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%);
     border-radius: 8px;
-    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-    transition: clip-path 0.3s ease-in-out;
 }
+
 
 
 .zigzag-text {
@@ -529,9 +529,6 @@ ul li {
 /* Reverse layout for alternating rows */
 .right-image {
     flex-direction: row-reverse;
-}
-    .right-image .zigzag-img img {
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
 }
 
 }
