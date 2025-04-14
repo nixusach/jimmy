@@ -334,6 +334,12 @@ ul li {
         display: block; /* Optional: ensures centering works */
     }
 
+    .mobile-description span {
+        font-size: 16px;
+        font-weight: 600;
+        display: block; /* Optional: ensures centering works */
+    }
+
 
     .selection-row, .form-row {
         display: flex;
