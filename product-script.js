@@ -21,6 +21,7 @@ document.getElementById("add-more").addEventListener("click", function () {
         <label for="${colorId}">اللون${productNum}:</label>
         <select id="${colorId}" name="color_${counter}">
             <option value="بني">بني</option>
+            <option value="أزرق">أزرق</option>
             <option value="سماوي">سماوي</option>
             <option value="وردي">وردي</option>
         </select>  
@@ -97,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const colorSelect = document.getElementById("color-select");
     colorSelect.innerHTML = `
         <option value="بني">بني</option>
+        <option value="أزرق">أزرق</option>
         <option value="سماوي">سماوي</option>
         <option value="وردي">وردي</option>
     `;
