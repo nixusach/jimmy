@@ -24,6 +24,26 @@ body {
 .mobile-header {
     display: none;
 }
+
+.description {
+    margin: 20px 0;
+    line-height: 1.8;
+    color: #555;
+    font-size: 17px;
+    border-right: 2px solid #f0f0f0;
+    padding-right: 15px;
+}
+
+.description p {
+    margin: 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.description b {
+    font-weight: 600;
+}
+
 /* Main Container */
 .product-container {
     display: flex;
