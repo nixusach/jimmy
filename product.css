@@ -491,4 +491,40 @@ ul li {
     .mobile-description b {
     font-weight: 600;
     }
+    .zigzag-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.zigzag-img {
+    width: 70%;
+}
+
+.zigzag-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.zigzag-text {
+    width: 30%;
+    padding: 0 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Reverse layout for alternating rows */
+.right-image {
+    flex-direction: row-reverse;
+}
 }
