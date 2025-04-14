@@ -488,4 +488,7 @@ ul li {
     .mobile-description {
         display: block;
     }
+    .mobile-description b {
+    font-weight: 600;
+    }
 }
