@@ -77,7 +77,7 @@ document.head.appendChild(style);
 
 document.addEventListener("DOMContentLoaded", function () {
     // Set Arabic product details
-    document.getElementById("product-name").textContent = "Vip مصحف الفاخر";
+    document.getElementById("product-name").textContent = "مصحف الفاخر Vip";
     document.getElementById("product-price").textContent = "4500 دج";
 
     const images = ["20250412_103122.jpg", "1.jpg", "2.jpg", "3.jpg"];
