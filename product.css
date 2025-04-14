@@ -199,7 +199,8 @@ h2 {
 }
 
 .form-row input,
-.form-row textarea {
+.form-row textarea,
+.form-row select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
