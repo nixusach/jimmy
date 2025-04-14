@@ -515,8 +515,10 @@ ul li {
     clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%);
     border-radius: 8px;
 }
-
-
+    
+.right-image .zigzag-img img {
+    clip-path: polygon(100% 0, 50% 0, 0 50%, 50% 100%, 100% 100%);
+}
 
 .zigzag-text {
     width: 30%;
