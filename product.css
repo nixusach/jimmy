@@ -513,7 +513,10 @@ ul li {
     height: auto;
     display: block;
     border-radius: 8px;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    transition: clip-path 0.3s ease-in-out;
 }
+
 
 .zigzag-text {
     width: 30%;
@@ -527,4 +530,8 @@ ul li {
 .right-image {
     flex-direction: row-reverse;
 }
+    .right-image .zigzag-img img {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
+}
+
 }
