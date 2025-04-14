@@ -251,6 +251,16 @@ ul li {
     cursor: pointer;
 }
 
+.mobile-description {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #555;
+    font-size: 17px;
+    border-right: 2px solid #f0f0f0;
+    padding-right: 15px;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     html, body {
@@ -449,5 +459,8 @@ ul li {
     /* Optional: Prevent text from ever wrapping */
     .contact-banner br {
         display: none;
+    }
+    .mobile-description {
+        display: block;
     }
 }
