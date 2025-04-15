@@ -407,11 +407,6 @@ ul li {
         text-align: right;
     }
 
-    .form-row {
-    position: relative;
-    margin-bottom: 100px;
-    }
-
     .form-row textarea {
         min-height: 100px;
         resize: vertical;
