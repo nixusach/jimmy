@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("product-name").textContent = "مصحف الفاخر Vip";
     document.getElementById("product-price").textContent = "4500 دج";
 
-    const images = ["20250412_103122.jpg", "IMG_20250415_070743.jpg", "2.jpg", "3.jpg"];
+    const images = ["20250412_103122.jpg", "IMG_20250415_070743.jpg", "2.jpg", "3.jpg", "20250419_102628.jpg", "20250419_102713.jpg", "20250419_143639.jpg", "20250419_102617.jpg"];
     let currentImageIndex = 0;
     const productImage = document.getElementById("product-image");
     const prevButton = document.querySelector(".prev-btn");
