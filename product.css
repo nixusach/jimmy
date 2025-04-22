@@ -136,8 +136,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-
-
 /* Form Elements */
 #order-form {
     display: flex;
@@ -320,28 +318,27 @@ ul li {
     }
 
     .description {
-    display: none;
+        display: none;
     }
     
     .mobile-description {
-    margin: 20px 0;
-    line-height: 1.8;
-    color: #555;
-    font-size: 15px;
-    border-right: 2px solid #f0f0f0;
-    padding-right: 15px;
-}
+        margin: 20px 0;
+        line-height: 1.8;
+        color: #555;
+        font-size: 15px;
+        border-right: 2px solid #f0f0f0;
+        padding-right: 15px;
+    }
 
-.mobile-description p {
-    margin: 0;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
+    .mobile-description p {
+        margin: 15px 0;
+        text-align: justify;
+        text-justify: inter-word;
+    }
     
     .mobile-description p span {
         font-weight: 600;
-        display: block; /* Optional: ensures centering works */
+        display: block;
     }
 
     .mobile-description span {
@@ -349,6 +346,18 @@ ul li {
         font-weight: 600;
     }
 
+    .description-image {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .description-image img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
     .selection-row, .form-row {
         display: flex;
@@ -358,16 +367,14 @@ ul li {
     }
 
     #order-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    /* Gradient border trick */
-    border: 2px solid transparent;
-    border-radius: 12px;
-    padding: 20px;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(to right, #57cc99, #003566) border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        padding: 20px;
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(to right, #57cc99, #003566) border-box;
     }
 
     .selection-row label, 
@@ -465,24 +472,23 @@ ul li {
     }
     
     .mobile-logo {
-        max-width: 70px; /* Slightly smaller logo */
+        max-width: 70px;
         height: 60px;
     }
     
     .contact-banner {
         background: linear-gradient(to right, #57cc99, #003566);
         color: white;
-        padding: 10px 0; /* Top/bottom padding only */
-        margin: 0; /* No side margins */
+        padding: 10px 0;
+        margin: 0;
         font-weight: bold;
         text-align: center;
-        font-size: 14px; /* Slightly smaller font */
-        white-space: nowrap; /* Ensures single line */
-        overflow: hidden; /* Prevents text wrapping */
-        text-overflow: ellipsis; /* Adds ... if text overflows */
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
-    /* Optional: Prevent text from ever wrapping */
     .contact-banner br {
         display: none;
     }
@@ -490,48 +496,47 @@ ul li {
         display: block;
     }
     .mobile-description b {
-    font-weight: 600;
+        font-weight: 600;
     }
     .zigzag-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-.zigzag-row {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 15px;
-}
+    .zigzag-row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
 
-.zigzag-img {
-    width: 70%;
-}
+    .zigzag-img {
+        width: 70%;
+    }
 
-.zigzag-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-    clip-path: polygon(100% 0, 50% 0, 0 50%, 50% 100%, 100% 100%);
-    border-radius: 8px;
-}
+    .zigzag-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        clip-path: polygon(100% 0, 50% 0, 0 50%, 50% 100%, 100% 100%);
+        border-radius: 8px;
+    }
     
-.right-image .zigzag-img img {
-    clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%);
-}
+    .right-image .zigzag-img img {
+        clip-path: polygon(0 0, 50% 0, 100% 50%, 50% 100%, 0 100%);
+    }
 
-.zigzag-text {
-    width: 30%;
-    padding: 0 8px;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: right;
-}
+    .zigzag-text {
+        width: 30%;
+        padding: 0 8px;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: right;
+    }
 
-/* Reverse layout for alternating rows */
-.right-image {
-    flex-direction: row-reverse;
-}
-
+    /* Reverse layout for alternating rows */
+    .right-image {
+        flex-direction: row-reverse;
+    }
 }
