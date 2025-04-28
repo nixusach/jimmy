@@ -29,7 +29,6 @@ document.getElementById("add-more").addEventListener("click", function () {
         <label for="${sizeId}">المقاس${productNum}:</label>
         <select id="${sizeId}" name="size_${counter}" disabled>
             <option value="28 × 20سم">28سم × 20سم</option>
-
         </select>  
 
         <label for="${qtyId}">الكمية${productNum}:</label>
@@ -42,40 +41,14 @@ document.getElementById("add-more").addEventListener("click", function () {
 
     newRow.querySelector(".remove-btn").addEventListener("click", function () {
         container.removeChild(newRow);
+        updatePrices();
     });
+
+    // Add event listener for quantity change
+    newRow.querySelector(`#${qtyId}`).addEventListener("change", updatePrices);
 });
 
-// ... rest of your existing JavaScript code ...
-
-// Inject CSS for the separator and remove button
-const style = document.createElement('style');
-style.textContent = `
-    @media (max-width: 768px) {
-        .product-separator {
-            margin: 10px auto;
-            width: 75%;
-            border-top: 3px dashed black;
-        }
-    }
-
-    .remove-btn {
-        background-color: #e63946;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        margin-top: 10px;
-        cursor: pointer;
-        border-radius: 6px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-
-    .remove-btn:hover {
-        background-color: #c62828;
-    }
-`;
-document.head.appendChild(style);
-
+// Product images gallery
 document.addEventListener("DOMContentLoaded", function () {
     // Set Arabic product details
     document.getElementById("product-name").textContent = "مصحف الفاخر Vip";
@@ -120,8 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
             productImage.style.transform = "scale(1)";
         }, 100);
     }
+
+    // Initialize wilaya select and price calculation
+    initializeWilayaSelect();
+    updatePrices();
 });
 
+// Algerian wilayas
 const wilayas = [
     "أدرار", "الشلف", "الأغواط", "أم البواقي", "باتنة", "بجاية", "بسكرة", "بشار", "البليدة", "البويرة",
     "تمنراست", "تبسة", "تلمسان", "تيارت", "تيزي وزو", "الجزائر", "الجلفة", "جيجل", "سطيف", "سعيدة",
@@ -131,11 +109,104 @@ const wilayas = [
     "برج باجي مختار", "أولاد جلال", "بني عباس", "عين صالح", "عين قزام", "تقرت", "جانت", "المغير", "المنيعة"
 ];
 
-const wilayaSelect = document.getElementById("wilaya-select");
+// Delivery prices for each wilaya (random between 200-800)
+const deliveryPrices = {
+    "أدرار": 500, "الشلف": 300, "الأغواط": 400, "أم البواقي": 350, "باتنة": 350, 
+    "بجاية": 300, "بسكرة": 400, "بشار": 600, "البليدة": 250, "البويرة": 300,
+    "تمنراست": 700, "تبسة": 400, "تلمسان": 350, "تيارت": 350, "تيزي وزو": 300, 
+    "الجزائر": 200, "الجلفة": 400, "جيجل": 300, "سطيف": 350, "سعيدة": 450,
+    "سكيكدة": 300, "سيدي بلعباس": 400, "عنابة": 300, "قالمة": 350, "قسنطينة": 300, 
+    "المدية": 300, "مستغانم": 350, "المسيلة": 400, "معسكر": 400, "ورقلة": 500,
+    "وهران": 350, "البيض": 450, "إليزي": 650, "برج بوعريريج": 350, "بومرداس": 250, 
+    "الطارف": 300, "تندوف": 800, "تيسمسيلت": 400, "الوادي": 450, "خنشلة": 400,
+    "سوق أهراس": 400, "تيبازة": 300, "ميلة": 350, "عين الدفلى": 300, "النعامة": 500, 
+    "عين تموشنت": 400, "غرداية": 500, "غليزان": 350, "تميمون": 600,
+    "برج باجي مختار": 700, "أولاد جلال": 500, "بني عباس": 600, "عين صالح": 650, 
+    "عين قزام": 700, "تقرت": 500, "جانت": 750, "المغير": 550, "المنيعة": 600
+};
 
-wilayas.forEach(w => {
-    const option = document.createElement("option");
-    option.value = w;
-    option.textContent = w;
-    wilayaSelect.appendChild(option);
+function initializeWilayaSelect() {
+    const wilayaSelect = document.createElement('select');
+    wilayaSelect.id = 'wilaya-select';
+    wilayaSelect.name = 'wilaya';
+    wilayaSelect.required = true;
+
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'اختر الولاية';
+    wilayaSelect.appendChild(defaultOption);
+
+    wilayas.forEach(w => {
+        const option = document.createElement('option');
+        option.value = w;
+        option.textContent = w;
+        wilayaSelect.appendChild(option);
+    });
+
+    // Add wilaya select to the form (before the address field)
+    const addressField = document.querySelector('textarea[name="address"]').parentNode;
+    const wilayaContainer = document.createElement('div');
+    wilayaContainer.className = 'form-row';
+    wilayaContainer.innerHTML = '<label>الولاية:</label>';
+    wilayaContainer.appendChild(wilayaSelect);
+    addressField.parentNode.insertBefore(wilayaContainer, addressField);
+
+    // Add event listener for wilaya change
+    wilayaSelect.addEventListener('change', updatePrices);
+}
+
+function updatePrices() {
+    const productPrice = 4500; // Base product price
+    let totalQuantity = 0;
+    
+    // Calculate total quantity from all product rows
+    const quantityInputs = document.querySelectorAll('input[type="number"][name^="quantity"]');
+    quantityInputs.forEach(input => {
+        totalQuantity += parseInt(input.value) || 0;
+    });
+
+    const selectedWilaya = document.getElementById('wilaya-select').value;
+    const deliveryPrice = selectedWilaya ? deliveryPrices[selectedWilaya] : 0;
+    const totalPrice = (productPrice * totalQuantity) + deliveryPrice;
+
+    // Update displayed prices (only on mobile)
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        document.getElementById('mobile-product-price').textContent = `${productPrice * totalQuantity} دج`;
+        document.getElementById('delivery-price').textContent = selectedWilaya ? `${deliveryPrice} دج` : '0 دج';
+        document.getElementById('total-price').textContent = `${totalPrice} دج`;
+    }
+}
+
+// Add event listeners for quantity changes
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('input[name="quantity"]').addEventListener('change', updatePrices);
 });
+
+// Inject CSS for the separator and remove button
+const style = document.createElement('style');
+style.textContent = `
+    @media (max-width: 768px) {
+        .product-separator {
+            margin: 10px auto;
+            width: 75%;
+            border-top: 3px dashed black;
+        }
+    }
+
+    .remove-btn {
+        background-color: #e63946;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .remove-btn:hover {
+        background-color: #c62828;
+    }
+`;
+document.head.appendChild(style);
