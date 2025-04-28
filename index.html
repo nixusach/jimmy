@@ -90,6 +90,24 @@
                     <label>العنوان الكامل:</label>
                     <textarea name="address" required></textarea>
                 </div>
+                <!-- Add this inside the form, before the submit button -->
+<div class="mobile-price-summary">
+    <div class="price-item">
+        <span class="price-icon">💰</span>
+        <span class="price-label">سعر المنتج:</span>
+        <span class="price-value" id="mobile-product-price">4500 دج</span>
+    </div>
+    <div class="price-item">
+        <span class="price-icon">🚚</span>
+        <span class="price-label">سعر التوصيل:</span>
+        <span class="price-value" id="delivery-price">0 دج</span>
+    </div>
+    <div class="price-item total">
+        <span class="price-icon">💵</span>
+        <span class="price-label">المبلغ الإجمالي:</span>
+        <span class="price-value" id="total-price">4500 دج</span>
+    </div>
+</div>
 
                 <button type="submit" class="submit-btn">اضغط هنا لتأكيد الطلب</button>
             </form>
