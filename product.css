@@ -554,7 +554,7 @@ ul li {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 12px;
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .price-item.total {
@@ -562,12 +562,12 @@ ul li {
         padding-top: 10px;
         border-top: 1px dashed #ccc;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .price-icon {
         margin-left: 8px;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .price-label {
@@ -584,7 +584,7 @@ ul li {
 
     .price-item.total .price-value {
         color: #003566;
-        font-size: 20px;
+        font-size: 18px;
     }
     }
 }
