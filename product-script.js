@@ -109,7 +109,7 @@ const wilayas = [
     "برج باجي مختار", "أولاد جلال", "بني عباس", "عين صالح", "عين قزام", "تقرت", "جانت", "المغير", "المنيعة"
 ];
 
-// Delivery prices for each wilaya (random between 200-800)
+// Delivery prices for each wilaya
 const deliveryPrices = {
     "أدرار": 500, "الشلف": 300, "الأغواط": 400, "أم البواقي": 350, "باتنة": 350, 
     "بجاية": 300, "بسكرة": 400, "بشار": 600, "البليدة": 250, "البويرة": 300,
@@ -126,30 +126,24 @@ const deliveryPrices = {
 };
 
 function initializeWilayaSelect() {
-    const wilayaSelect = document.createElement('select');
-    wilayaSelect.id = 'wilaya-select';
-    wilayaSelect.name = 'wilaya';
-    wilayaSelect.required = true;
-
+    const wilayaSelect = document.getElementById('wilaya-select');
+    
+    // Clear existing options
+    wilayaSelect.innerHTML = '';
+    
+    // Add default option
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
     defaultOption.textContent = 'اختر الولاية';
     wilayaSelect.appendChild(defaultOption);
 
+    // Add wilaya options
     wilayas.forEach(w => {
         const option = document.createElement('option');
         option.value = w;
         option.textContent = w;
         wilayaSelect.appendChild(option);
     });
-
-    // Add wilaya select to the form (before the address field)
-    const addressField = document.querySelector('textarea[name="address"]').parentNode;
-    const wilayaContainer = document.createElement('div');
-    wilayaContainer.className = 'form-row';
-    wilayaContainer.innerHTML = '<label>الولاية:</label>';
-    wilayaContainer.appendChild(wilayaSelect);
-    addressField.parentNode.insertBefore(wilayaContainer, addressField);
 
     // Add event listener for wilaya change
     wilayaSelect.addEventListener('change', updatePrices);
@@ -170,11 +164,9 @@ function updatePrices() {
     const totalPrice = (productPrice * totalQuantity) + deliveryPrice;
 
     // Update displayed prices (only on mobile)
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        document.getElementById('mobile-product-price').textContent = `${productPrice * totalQuantity} دج`;
-        document.getElementById('delivery-price').textContent = selectedWilaya ? `${deliveryPrice} دج` : '0 دج';
-        document.getElementById('total-price').textContent = `${totalPrice} دج`;
-    }
+    document.getElementById('mobile-product-price').textContent = `${productPrice * totalQuantity} دج`;
+    document.getElementById('delivery-price').textContent = selectedWilaya ? `${deliveryPrice} دج` : '0 دج';
+    document.getElementById('total-price').textContent = `${totalPrice} دج`;
 }
 
 // Add event listeners for quantity changes
